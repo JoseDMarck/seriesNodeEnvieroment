@@ -1,4 +1,4 @@
-export default class Series {
+class Series {
 	constructor(number) {
 		this.number = number;
 	}
