@@ -1,17 +1,15 @@
 class Series {
 	constructor(number) {
 		this.number = number;
-		this.n_prime = null;
-		this.n_triangular = null;
-		this.n_fibonacci = null;
 	}
 
 	/* --------------------------------------------------------
 	/* ---- NUMERO PRIMO
 	-------------------------------------------------------- */
 
-	getPrimeNumber() {
-		const number = this.n_prime;
+	getPrimeNumber(value) {
+		const number = value;
+		console.log("this.number", this.number);
 		if (number <= 1) return false;
 		if (!Number.isInteger(number)) return false;
 		for (let i = 2; i < number; i++) {
@@ -24,11 +22,11 @@ class Series {
 	/* ---- NUMERO TRIANGULAR
 	-------------------------------------------------------- */
 
-	getTriangularNumber() {
-		const number = this.n_triangular;
+	getTriangularNumber(value) {
+		const number = value;
 		let tNumber = 0;
 		let i = 1;
-		while (i <= this.number) {
+		while (i <= number) {
 			tNumber += i;
 			i++;
 		}
@@ -39,8 +37,8 @@ class Series {
 	/* ---- NUGMERO FIBONACCI
 	-------------------------------------------------------- */
 
-	getFibonacciNumber() {
-		const number = this.n_fibonacci;
+	getFibonacciNumber(value) {
+		const number = value;
 		const fib = [0, 1];
 		for (let i = 2; i <= number; i++) {
 			fib[i] = fib[i - 2] + fib[i - 1];
@@ -50,12 +48,9 @@ class Series {
 	/* --------------------------------------------------------
 	/* ---- VALIDAR NUMERO 
 	-------------------------------------------------------- */
-	validateInputNumber() {
-		const number = this.number;
-
-		this.n_prime = this.number + 3; // (n+3)
-		this.n_triangular = this.number - 1; // (n+1)
-		this.n_fibonacci = this.number - 2; // (n-2)
+	validateInputNumber(value) {
+		this.number = value;
+		const number = value;
 
 		//Valudar que el numero sea un Número
 		if (typeof number !== "number")
