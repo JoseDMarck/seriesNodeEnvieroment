@@ -3,9 +3,14 @@ class Series {
 		this.number = number;
 		this.n_prime = null;
 		this.n_triangular = null;
+		g;
 	}
 
 	validateInputNumber() {}
+
+	/* --------------------------------------------------------
+	/* ---- NUMERO PRIMO
+	-------------------------------------------------------- */
 
 	getPrimeNumber() {
 		const number = this.n_prime;
@@ -15,6 +20,10 @@ class Series {
 		}
 		return number;
 	}
+
+	/* --------------------------------------------------------
+	/* ---- NUMERO TRIANGULAR
+	-------------------------------------------------------- */
 
 	getTriangularNumber() {
 		const number = this.n_triangular;
@@ -26,5 +35,4 @@ class Series {
 		}
 		return tNumber;
 	}
-	getFibonacciNumber() {}
 }
