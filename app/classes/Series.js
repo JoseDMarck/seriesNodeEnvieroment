@@ -2,6 +2,7 @@ class Series {
 	constructor(number) {
 		this.number = number;
 		this.n_prime = null;
+		this.n_triangular = null;
 	}
 
 	validateInputNumber() {}
@@ -14,6 +15,16 @@ class Series {
 		}
 		return number;
 	}
-	getTriangularNumber() {}
+
+	getTriangularNumber() {
+		const number = this.n_triangular;
+		let tNumber = 0;
+		let i = 1;
+		while (i <= this.number) {
+			tNumber += i;
+			i++;
+		}
+		return tNumber;
+	}
 	getFibonacciNumber() {}
 }
