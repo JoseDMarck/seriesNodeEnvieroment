@@ -26,7 +26,7 @@ class Series {
 			throw new Error("El número introducido debe de ser mayor a 0");
 
 		if (typeof value !== "number")
-			throw new Error("El número introducido debe de ser mayor a 0");
+			throw new Error("El número introducido debe de ser tipo númerico");
 
 		const number = value;
 		let tNumber = 0;
@@ -43,6 +43,17 @@ class Series {
 	-------------------------------------------------------- */
 
 	getFibonacciNumber(value) {
+		if (typeof value !== "number")
+			throw new Error("El número introducido debe de ser tipo númerico");
+
+		if (value < 1)
+			throw new Error("El número introducido debe de ser mayor a 0");
+
+		if (!Number.isInteger(value))
+			throw new Error(
+				"El número introducido debe de ser un número entero"
+			);
+
 		const number = value;
 		const fib = [0, 1];
 		for (let i = 2; i <= number; i++) {
@@ -50,29 +61,34 @@ class Series {
 		}
 		return fib[number];
 	}
+
 	/* --------------------------------------------------------
-	/* ---- VALIDAR NUMERO 
+	/* ---- MANEJO DE ERRORES
 	-------------------------------------------------------- */
-	validateInputNumber(value) {
-		this.number = value;
-		const number = value;
+	errorHandler(input) {
+		switch (input) {
+			case "INPUT_MUST_BE_INTEGER":
+				throw new Error("El número de entrada debe de ser un entero");
+				break;
+			case "INPUT_MUST_BE_GREATER_THAN_ZERO":
+				throw new Error("El número introducido debe de ser mayor a 0");
+				break;
 
-		//Valudar que el numero sea un Número
-		if (typeof number !== "number")
-			throw new Error("El número de entrada debe de ser un entero");
+			case "INPUT_MUST_NUMERICAL_TYPE":
+				throw new Error(
+					"El número introducido debe de ser tipo númerico"
+				);
+				break;
 
-		//Validar si es número Primo
-		if (!this.getPrimeNumber()) throw new Error("El número no es primo");
+			case "INPUT_MUST_PRIMAL_NUMBER":
+				throw new Error(
+					"El número introducido debe de ser un número primo"
+				);
+				break;
 
-		//Validar numero triangular
-		if (this.n_triangular < 1)
-			throw new Error("El número triangular debe de ser mayor a 0");
-
-		//Validar numero fibonacci
-		if (this.n_fibonacci < 1)
-			throw new Error("El número Fibonnaci debe de ser mayor a 0");
-
-		return true;
+			default:
+				throw new Error("Se ha presentado un error no registrado");
+		}
 	}
 }
 
