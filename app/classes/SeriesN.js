@@ -1,6 +1,6 @@
 const Series = require("./Series");
 
-class SeriesN extends Series {
+export default class SeriesN extends Series {
 	constructor(number) {
 		super(number);
 	}

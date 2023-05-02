@@ -1,4 +1,4 @@
-class Series {
+export default class Series {
 	constructor(number) {
 		this.number = number;
 	}
@@ -60,35 +60,6 @@ class Series {
 			fib[i] = fib[i - 2] + fib[i - 1];
 		}
 		return fib[number];
-	}
-
-	/* --------------------------------------------------------
-	/* ---- MANEJO DE ERRORES
-	-------------------------------------------------------- */
-	errorHandler(input) {
-		switch (input) {
-			case "INPUT_MUST_BE_INTEGER":
-				throw new Error("El número de entrada debe de ser un entero");
-				break;
-			case "INPUT_MUST_BE_GREATER_THAN_ZERO":
-				throw new Error("El número introducido debe de ser mayor a 0");
-				break;
-
-			case "INPUT_MUST_NUMERICAL_TYPE":
-				throw new Error(
-					"El número introducido debe de ser tipo númerico"
-				);
-				break;
-
-			case "INPUT_MUST_PRIMAL_NUMBER":
-				throw new Error(
-					"El número introducido debe de ser un número primo"
-				);
-				break;
-
-			default:
-				throw new Error("Se ha presentado un error no registrado");
-		}
 	}
 }
 
