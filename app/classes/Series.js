@@ -74,3 +74,5 @@ class Series {
 		return true;
 	}
 }
+
+module.exports = Series;
