@@ -1,0 +1,32 @@
+{
+  "name": "seriesnodeenvieroment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseDMarck/seriesNodeEnvieroment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoseDMarck/seriesNodeEnvieroment/issues"
+  },
+  "homepage": "https://github.com/JoseDMarck/seriesNodeEnvieroment#readme",
+  "devDependencies": {
+    "standard": "^17.0.0",
+    "vitest": "^0.30.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/slintrc.js"
+  }
+}
