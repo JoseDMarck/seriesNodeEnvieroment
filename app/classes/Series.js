@@ -9,7 +9,6 @@ class Series {
 
 	getPrimeNumber(value) {
 		const number = value;
-		console.log("this.number", this.number);
 		if (number <= 1) return false;
 		if (!Number.isInteger(number)) return false;
 		for (let i = 2; i < number; i++) {
@@ -23,6 +22,12 @@ class Series {
 	-------------------------------------------------------- */
 
 	getTriangularNumber(value) {
+		if (value < 1)
+			throw new Error("El número introducido debe de ser mayor a 0");
+
+		if (typeof value !== "number")
+			throw new Error("El número introducido debe de ser mayor a 0");
+
 		const number = value;
 		let tNumber = 0;
 		let i = 1;

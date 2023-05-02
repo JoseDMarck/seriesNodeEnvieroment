@@ -3,7 +3,7 @@ const Series = require("../classes/Series");
 
 let serie = new Series();
 
-describe("getPrimeNumberTEST", () => {
+describe("getPrimeNumber", () => {
 	// 1- Si el número introducido es menor o igial a 1 regresa Falso
 	it("test_zero_or_one_returns_false", () => {
 		expect(serie.getPrimeNumber(1)).toBe(false);
