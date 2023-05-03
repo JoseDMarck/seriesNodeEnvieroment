@@ -54,6 +54,18 @@ class ErrorHandler {
 					ErrorHandler.throwError("INPUT_MUST_BE_GREATER_THAN_ZERO");
 				break;
 
+			case "IntegerValidNumber":
+				if (
+					number === null ||
+					number === undefined ||
+					typeof number !== "number" ||
+					!Number.isInteger(number)
+				)
+					ErrorHandler.throwError("INPUT_MUST_BE_VALID_NUMBER");
+
+				if (number < 1)
+					ErrorHandler.throwError("INPUT_MUST_BE_GREATER_THAN_ZERO");
+
 			default:
 		}
 	}

@@ -4,6 +4,7 @@ const path = require("path");
 const app = express();
 
 const seriesRouters = require("./app/routes/series");
+const formulaRouters = require("./app/routes/formula");
 
 var cors = require("cors");
 
@@ -28,6 +29,8 @@ app.use(
 //CORS
 app.use(cors());
 app.use(seriesRouters);
+app.use(formulaRouters);
+
 app.use(express.static(path.join(__dirname, "public")));
 
 app.listen(port, hostname, function () {
