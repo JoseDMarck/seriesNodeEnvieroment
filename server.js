@@ -2,7 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
-const personRouters = require("./app/routes/person");
+
+const seriesRouters = require("./app/routes/series");
 
 var cors = require("cors");
 
@@ -26,8 +27,9 @@ app.use(
 
 //CORS
 app.use(cors());
-app.use(personRouters);
+app.use(seriesRouters);
 app.use(express.static(path.join(__dirname, "public")));
+
 app.listen(port, hostname, function () {
 	console.log(`Server running 🚀✨ at http://${hostname}:${port}/ `);
 });

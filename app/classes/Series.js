@@ -1,3 +1,5 @@
+const ErrorHandler = require("./ErrorHandler");
+
 class Series {
 	constructor(number) {
 		this.number = number;
@@ -9,10 +11,22 @@ class Series {
 
 	getPrimeNumber(value) {
 		const number = value;
-		if (number <= 1) return false;
-		if (!Number.isInteger(number)) return false;
+
+		if (number === null || number === undefined)
+			ErrorHandler.throwError("INPUT_MUST_BE_NOT_NULL");
+
+		if (typeof number !== "number")
+			ErrorHandler.throwError("INPUT_MUST_NUMERICAL_TYPE");
+
+		if (!Number.isInteger(number))
+			ErrorHandler.throwError("INPUT_MUST_BE_INTEGER");
+
+		if (number <= 1)
+			ErrorHandler.throwError("INPUT_MUST_BE_GREATER_THAN_ZERO_AND_ONE");
+
 		for (let i = 2; i < number; i++) {
-			if (number % i === 0) return false;
+			if (number % i === 0)
+				ErrorHandler.throwError("INPUT_MUST_PRIMAL_NUMBER");
 		}
 		return number;
 	}
@@ -22,13 +36,20 @@ class Series {
 	-------------------------------------------------------- */
 
 	getTriangularNumber(value) {
-		if (value < 1)
-			throw new Error("El número introducido debe de ser mayor a 0");
-
-		if (typeof value !== "number")
-			throw new Error("El número introducido debe de ser tipo númerico");
-
 		const number = value;
+
+		if (number === null || number === undefined)
+			ErrorHandler.throwError("INPUT_MUST_BE_NOT_NULL");
+
+		if (typeof number !== "number")
+			ErrorHandler.throwError("INPUT_MUST_NUMERICAL_TYPE");
+
+		if (!Number.isInteger(number))
+			ErrorHandler.throwError("INPUT_MUST_BE_INTEGER");
+
+		if (number < 1)
+			ErrorHandler.throwError("INPUT_MUST_BE_GREATER_THAN_ZERO");
+
 		let tNumber = 0;
 		let i = 1;
 		while (i <= number) {
@@ -43,18 +64,20 @@ class Series {
 	-------------------------------------------------------- */
 
 	getFibonacciNumber(value) {
-		if (typeof value !== "number")
-			throw new Error("El número introducido debe de ser tipo númerico");
-
-		if (value < 1)
-			throw new Error("El número introducido debe de ser mayor a 0");
-
-		if (!Number.isInteger(value))
-			throw new Error(
-				"El número introducido debe de ser un número entero"
-			);
-
 		const number = value;
+
+		if (number === null || number === undefined)
+			ErrorHandler.throwError("INPUT_MUST_BE_NOT_NULL");
+
+		if (typeof number !== "number")
+			ErrorHandler.throwError("INPUT_MUST_NUMERICAL_TYPE");
+
+		if (!Number.isInteger(number))
+			ErrorHandler.throwError("INPUT_MUST_BE_INTEGER");
+
+		if (number < 1)
+			ErrorHandler.throwError("INPUT_MUST_BE_GREATER_THAN_ZERO");
+
 		const fib = [0, 1];
 		for (let i = 2; i <= number; i++) {
 			fib[i] = fib[i - 2] + fib[i - 1];

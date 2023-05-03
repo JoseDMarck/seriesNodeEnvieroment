@@ -1,16 +1,16 @@
 import { describe, expect, it } from "vitest";
-const ErrorHandler = require("../classes/ErrorHandler");
+const ErrorHandler = require("../../classes/ErrorHandler");
 
 describe("errorHandler", () => {
 	// 1- Muestra los mensajes de error dependiendo del input
 	it("test_throw_error_with_valid_error_type", () => {
 		expect(() =>
 			ErrorHandler.throwError("INPUT_MUST_BE_INTEGER")
-		).toThrowError("El número de entrada debe de ser un entero");
+		).toThrowError("El número debe de ser un entero");
 
 		expect(() =>
 			ErrorHandler.throwError("INPUT_MUST_BE_GREATER_THAN_ZERO")
-		).toThrowError("El número  debe de ser mayor a 0");
+		).toThrowError("El número debe de ser mayor a 0");
 		expect(() =>
 			ErrorHandler.throwError("INPUT_MUST_NUMERICAL_TYPE")
 		).toThrowError("El número debe de ser tipo númerico");
