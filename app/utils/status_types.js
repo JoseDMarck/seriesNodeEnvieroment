@@ -1,4 +1,6 @@
-const STATUS_OK = 200;
-const STATUS_INTERNAL_SERVER_ERROR = 500;
-
-module.exports = { STATUS_OK, STATUS_INTERNAL_SERVER_ERROR };
+const status = {
+	STATUS_OK: 200,
+	STATUS_INTERNAL_SERVER_ERROR: 500,
+	NOT_FOUND: 400,
+};
+module.exports = status;

@@ -1,7 +1,4 @@
-const {
-	STATUS_OK,
-	STATUS_INTERNAL_SERVER_ERROR,
-} = require("../utils/status_types");
+const status = require("../utils/status_types");
 
 class RequestHandler {
 	static jsonResponse(status, error, response, res) {
@@ -13,12 +10,17 @@ class RequestHandler {
 	}
 
 	static handleSuccessResponse(responseData, res) {
-		return RequestHandler.jsonResponse(STATUS_OK, false, responseData, res);
+		return RequestHandler.jsonResponse(
+			status.STATUS_OK,
+			false,
+			responseData,
+			res
+		);
 	}
 
 	static handleErrorResponse(errorMessage, res) {
 		return RequestHandler.jsonResponse(
-			STATUS_INTERNAL_SERVER_ERROR,
+			status.STATUS_INTERNAL_SERVER_ERROR,
 			true,
 			errorMessage,
 			res
