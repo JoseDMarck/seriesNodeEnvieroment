@@ -2,32 +2,28 @@ const Series = require("./Series");
 const ErrorHandler = require("./ErrorHandler");
 
 class Formula extends Series {
-	constructor(number) {
+	constructor(number, sNumbers = {}) {
 		super(number);
-		this.operationNumbers;
+		this.sNumbers = sNumbers;
 	}
 
 	doMathOperations(number) {
 		ErrorHandler.validateIsCorrectNumber("IntegerValidNumber", number);
-		this.operationNumbers = {
+		const sNumbers = {
 			n_prime: number + 3,
 			n_triangle: number - 1,
 			n_fibonacci: number - 2,
 		};
-		return this.operationNumbers;
+		return sNumbers;
 	}
 
 	resolveFormula(number) {
-		const primeNumber = super.getPrimeNumber(number + 3);
-		const triangularNumber = super.getTriangularNumber(number - 1);
-		const fibonacciNumber = super.getFibonacciNumber(number - 2);
-		return (primeNumber * triangularNumber) / fibonacciNumber;
-	}
+		const { n_prime, n_triangle, n_fibonacci } =
+			this.doMathOperations(number);
 
-	resolveFormulaSingleNumber(number) {
-		const primeNumber = super.getPrimeNumber(number);
-		const triangularNumber = super.getTriangularNumber(number);
-		const fibonacciNumber = super.getFibonacciNumber(number);
+		const primeNumber = super.getPrimeNumber(n_prime);
+		const triangularNumber = super.getTriangularNumber(n_triangle);
+		const fibonacciNumber = super.getFibonacciNumber(n_fibonacci);
 
 		return (primeNumber * triangularNumber) / fibonacciNumber;
 	}

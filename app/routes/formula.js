@@ -13,12 +13,4 @@ router.post(`/${path}/do-math-operations`, controller.doMathOperations);
 -------------------------------------------------------- */
 router.post(`/${path}/resolve-formula`, controller.resolveFormula);
 
-/* --------------------------------------------------------
-/* ---- ROUTE RESOLVE FORMULA
--------------------------------------------------------- */
-router.post(
-	`/${path}/resolve-formula-single-number`,
-	controller.resolveFormulaSingleNumber
-);
-
 module.exports = router;

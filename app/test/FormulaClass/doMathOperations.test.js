@@ -6,7 +6,7 @@ let formula = new Formula();
 
 describe("DoMathOperations", () => {
 	// 1- El numero debe de ser mayor que cero
-	it("test_input_must_be_greather_than_zero", () => {
+	it("test_input_must_be_greather_tha_zero", () => {
 		expect(() =>
 			ErrorHandler.validateIsCorrectNumber("IntegerValidNumber", 0)
 		).toThrowError("El número debe de ser mayor a 0");

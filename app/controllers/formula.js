@@ -31,18 +31,3 @@ exports.resolveFormula = async (req, res) => {
 		RequestHandler.handleErrorResponse(error.message, res);
 	}
 };
-
-/* --------------------------------------------------------
-/* ---- RESOLVE FORMULA 
--------------------------------------------------------- */
-exports.resolveFormulaSingleNumber = async (req, res) => {
-	const { number } = req.body;
-	try {
-		RequestHandler.handleSuccessResponse(
-			formula.resolveFormulaSingleNumber(number),
-			res
-		);
-	} catch (error) {
-		RequestHandler.handleErrorResponse(error.message, res);
-	}
-};

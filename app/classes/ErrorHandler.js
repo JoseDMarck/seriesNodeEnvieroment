@@ -51,7 +51,9 @@ class ErrorHandler {
 					ErrorHandler.throwError("INPUT_MUST_BE_INTEGER");
 
 				if (number < 1)
-					ErrorHandler.throwError("INPUT_MUST_BE_GREATER_THAN_ZERO");
+					ErrorHandler.throwError(
+						"INPUT_MUST_BE_GREATER_THAN_ZERO_FIBONACCI"
+					);
 				break;
 
 			case "IntegerValidNumber":
