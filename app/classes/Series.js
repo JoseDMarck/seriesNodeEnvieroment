@@ -11,19 +11,7 @@ class Series {
 
 	getPrimeNumber(value) {
 		const number = value;
-
-		if (number === null || number === undefined)
-			ErrorHandler.throwError("INPUT_MUST_BE_NOT_NULL");
-
-		if (typeof number !== "number")
-			ErrorHandler.throwError("INPUT_MUST_NUMERICAL_TYPE");
-
-		if (!Number.isInteger(number))
-			ErrorHandler.throwError("INPUT_MUST_BE_INTEGER");
-
-		if (number <= 1)
-			ErrorHandler.throwError("INPUT_MUST_BE_GREATER_THAN_ZERO_AND_ONE");
-
+		ErrorHandler.validateIsCorrectNumber("primeNumber", number);
 		for (let i = 2; i < number; i++) {
 			if (number % i === 0)
 				ErrorHandler.throwError("INPUT_MUST_PRIMAL_NUMBER");
@@ -37,19 +25,7 @@ class Series {
 
 	getTriangularNumber(value) {
 		const number = value;
-
-		if (number === null || number === undefined)
-			ErrorHandler.throwError("INPUT_MUST_BE_NOT_NULL");
-
-		if (typeof number !== "number")
-			ErrorHandler.throwError("INPUT_MUST_NUMERICAL_TYPE");
-
-		if (!Number.isInteger(number))
-			ErrorHandler.throwError("INPUT_MUST_BE_INTEGER");
-
-		if (number < 1)
-			ErrorHandler.throwError("INPUT_MUST_BE_GREATER_THAN_ZERO");
-
+		ErrorHandler.validateIsCorrectNumber("triangleNumber", number);
 		let tNumber = 0;
 		let i = 1;
 		while (i <= number) {
@@ -65,19 +41,7 @@ class Series {
 
 	getFibonacciNumber(value) {
 		const number = value;
-
-		if (number === null || number === undefined)
-			ErrorHandler.throwError("INPUT_MUST_BE_NOT_NULL");
-
-		if (typeof number !== "number")
-			ErrorHandler.throwError("INPUT_MUST_NUMERICAL_TYPE");
-
-		if (!Number.isInteger(number))
-			ErrorHandler.throwError("INPUT_MUST_BE_INTEGER");
-
-		if (number < 1)
-			ErrorHandler.throwError("INPUT_MUST_BE_GREATER_THAN_ZERO");
-
+		ErrorHandler.validateIsCorrectNumber("fibonacciNumber", number);
 		const fib = [0, 1];
 		for (let i = 2; i <= number; i++) {
 			fib[i] = fib[i - 2] + fib[i - 1];

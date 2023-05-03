@@ -20,7 +20,7 @@ describe("errorHandler", () => {
 	});
 
 	// 2- Si el error no esta registrado manda mensaje por defecto
-	it("test_throw_error_with_valid_error_type", () => {
+	it("test_throw_error_is_no_error_type", () => {
 		expect(() => ErrorHandler.throwError("other")).toThrowError(
 			"Se ha presentado un error no registrado"
 		);
