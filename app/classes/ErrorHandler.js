@@ -58,13 +58,15 @@ class ErrorHandler {
 				if (
 					number === null ||
 					number === undefined ||
-					typeof number !== "number" ||
-					!Number.isInteger(number)
+					typeof number !== "number"
 				)
 					ErrorHandler.throwError("INPUT_MUST_BE_VALID_NUMBER");
 
 				if (number < 1)
 					ErrorHandler.throwError("INPUT_MUST_BE_GREATER_THAN_ZERO");
+
+				if (!Number.isInteger(number))
+					ErrorHandler.throwError("INPUT_MUST_BE_INTEGER");
 
 			default:
 		}
